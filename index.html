@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neo Legaspi | Web Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Neo Nestric Kram B. Legaspi, a BS Information Technology student who builds web systems with PHP, MySQL and JavaScript.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Neo Legaspi, back to top">
+        <span class="brand-mark" aria-hidden="true">NL</span>
+        <span class="brand-name">Neo Legaspi</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Main">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false">
+          <span id="themeToggleLabel">Dark mode</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="hero-hello">Hi, I'm Neo Nestric Kram B. Legaspi.</p>
+          <h1>I build web systems that keep community records in order.</h1>
+          <p class="hero-lead">
+            I'm a BS Information Technology student from Bulacan. I led and developed
+            my team's capstone, a profiling system used to manage resident and household
+            records for Barangay Dampol 2nd-A.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">See my projects</a>
+            <a class="btn btn-outline" href="assets/Neo_Legaspi_Resume.pdf" download>Download resume (PDF)</a>
+          </div>
+        </div>
+
+        <div class="hero-map" aria-hidden="true">
+          <svg viewBox="0 0 420 360" xmlns="http://www.w3.org/2000/svg">
+            <g class="map-lots">
+              <polygon points="20,30 150,18 168,120 34,138"/>
+              <polygon points="162,17 300,26 292,104 180,118"/>
+              <polygon points="312,28 402,40 396,150 304,112"/>
+              <polygon points="36,150 166,132 190,236 52,262"/>
+              <polygon points="180,130 292,116 300,214 202,232"/>
+              <polygon points="304,124 396,162 388,262 312,220"/>
+              <polygon points="54,274 192,248 210,338 70,344"/>
+              <polygon points="204,244 300,226 384,274 372,340 222,338"/>
+            </g>
+            <path class="map-road" d="M0,146 C120,120 250,110 420,160"/>
+            <path class="map-road" d="M176,0 C170,120 190,240 216,360"/>
+            <g class="map-dots">
+              <circle cx="70" cy="70" r="5"/><circle cx="118" cy="96" r="5"/>
+              <circle cx="222" cy="58" r="5"/><circle cx="262" cy="84" r="5"/>
+              <circle cx="350" cy="82" r="5"/><circle cx="92" cy="198" r="5"/>
+              <circle cx="140" cy="222" r="5"/><circle cx="338" cy="196" r="5"/>
+              <circle cx="116" cy="304" r="5"/><circle cx="270" cy="296" r="5"/>
+              <circle cx="330" cy="304" r="5"/>
+            </g>
+            <g class="map-pin">
+              <circle cx="244" cy="172" r="26"/>
+              <circle cx="244" cy="172" r="9"/>
+            </g>
+          </svg>
+          <p class="hero-map-note">Illustration based on the household map in my capstone.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container two-col">
+        <h2 id="about-title">About me</h2>
+        <div class="prose">
+          <p>
+            I study Information Technology at the College of Our Lady of Mercy of Pulilan.
+            Most of my work so far is in web development: HTML, CSS and JavaScript on the
+            front end, and PHP with MySQL on the back end.
+          </p>
+          <p>
+            I was the group leader of our six-member capstone team and the developer of the
+            system itself. That project taught me how to plan a database, protect accounts
+            and records, and keep a large codebase organized.
+          </p>
+          <p>
+            Outside of coding, I'm comfortable with hardware and networking: troubleshooting
+            workstations, installing operating systems, and setting up small local networks.
+            I'm looking for an entry-level role where I can keep learning from real projects.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tint" id="skills" aria-labelledby="skills-title">
+      <div class="container two-col">
+        <h2 id="skills-title">Skills</h2>
+        <dl class="skill-list">
+          <div class="skill-row">
+            <dt>Languages and markup</dt>
+            <dd>HTML, CSS, JavaScript, PHP (basic), C#</dd>
+          </div>
+          <div class="skill-row">
+            <dt>Frameworks</dt>
+            <dd>Bootstrap</dd>
+          </div>
+          <div class="skill-row">
+            <dt>Database</dt>
+            <dd>MySQL, HeidiSQL, database design, CRUD operations</dd>
+          </div>
+          <div class="skill-row">
+            <dt>Tools</dt>
+            <dd>VS Code, XAMPP, Laragon, phpMyAdmin, Git, GitHub</dd>
+          </div>
+          <div class="skill-row">
+            <dt>Hardware and networking</dt>
+            <dd>Computer troubleshooting, OS installation, IP configuration, Ethernet cabling, network setup</dd>
+          </div>
+          <div class="skill-row">
+            <dt>Other</dt>
+            <dd>Responsive web design, software and OS configuration, workstation setup</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 id="projects-title">Projects</h2>
+
+        <article class="project project-featured">
+          <header class="project-head">
+            <p class="project-meta">Capstone project, 2026</p>
+            <h3>Web-Based Barangay Information and Socio-Economic Profiling System</h3>
+            <p class="project-client">Built for the Office of Barangay Dampol 2nd-A, Pulilan, Bulacan</p>
+          </header>
+
+          <div class="project-body">
+            <div>
+              <p>
+                A full-stack web application that replaces paper and spreadsheet records
+                in a barangay office. Staff can register residents and households, record
+                socio-economic data, see households on a map, and produce reports.
+              </p>
+              <h4>What it does</h4>
+              <ul class="check-list">
+                <li>Dashboards for population, household and sector statistics</li>
+                <li>Resident and household profiling with search and filtering</li>
+                <li>Socio-economic profiling: income, employment and education</li>
+                <li>Verification of 4Ps, PWD, senior citizen and solo parent records</li>
+                <li>Household map by purok, built with Leaflet</li>
+                <li>Demographic, household and socio-economic reports with PDF and Excel export</li>
+                <li>Role-based access for admin, secretary and staff accounts</li>
+                <li>Activity logs, archives, and data backup and restore</li>
+              </ul>
+            </div>
+
+            <aside class="project-side">
+              <h4>My role</h4>
+              <p>
+                Group leader and developer. I designed the database, wrote the PHP back end
+                and the JavaScript front end, and built the responsive layouts.
+              </p>
+              <h4>Built with</h4>
+              <ul class="tag-list">
+                <li>PHP</li><li>MySQL</li><li>JavaScript</li><li>HTML</li><li>CSS</li>
+                <li>Bootstrap</li><li>Leaflet</li><li>PHPMailer</li><li>Git</li>
+              </ul>
+              <h4>Team</h4>
+              <p>Six members, BS Information Technology</p>
+            </aside>
+          </div>
+
+          <div class="project-shots">
+            <h4>Screenshots</h4>
+            <p class="shots-note">Taken with sample data. Select a screenshot to open it full size.</p>
+            <ul class="shot-grid">
+              <li>
+                <figure>
+                  <a href="assets/screens/01-landing.jpg" target="_blank" rel="noopener">
+                    <img src="assets/screens/01-landing.jpg" alt="Landing page of the barangay system with the logo and Enter System button" width="1400" height="710" loading="lazy">
+                  </a>
+                  <figcaption>Landing page</figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <a href="assets/screens/02-login.jpg" target="_blank" rel="noopener">
+                    <img src="assets/screens/02-login.jpg" alt="Login page of the barangay system" width="1400" height="710" loading="lazy">
+                  </a>
+                  <figcaption>Login page</figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <a href="assets/screens/03-overview.jpg" target="_blank" rel="noopener">
+                    <img src="assets/screens/03-overview.jpg" alt="Overview dashboard showing resident and household totals, sector chart and a satellite map with household pins" width="1400" height="710" loading="lazy">
+                  </a>
+                  <figcaption>Overview dashboard with household map</figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <a href="assets/screens/04-residents.jpg" target="_blank" rel="noopener">
+                    <img src="assets/screens/04-residents.jpg" alt="Resident list table with sample residents, search bar and filters" width="1400" height="710" loading="lazy">
+                  </a>
+                  <figcaption>Resident list</figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <a href="assets/screens/05-socio.jpg" target="_blank" rel="noopener">
+                    <img src="assets/screens/05-socio.jpg" alt="Socio-economic dashboard table showing employment status, occupation, income and education" width="1400" height="710" loading="lazy">
+                  </a>
+                  <figcaption>Socio-economic dashboard</figcaption>
+                </figure>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="project">
+          <header class="project-head">
+            <p class="project-meta">Academic group project, 2025</p>
+            <h3>PetClinic Appointment Windows Form Application</h3>
+          </header>
+          <div class="project-body">
+            <div>
+              <p>
+                A desktop application for managing pet clinic appointments. It stores
+                client, pet and appointment records and lets staff schedule and update
+                appointments.
+              </p>
+            </div>
+            <aside class="project-side">
+              <h4>My role</h4>
+              <p>
+                Developed the Windows Forms application and designed the SQL Server
+                database with a teammate.
+              </p>
+              <h4>Built with</h4>
+              <ul class="tag-list">
+                <li>C#</li><li>Windows Forms</li><li>Microsoft SQL Server</li>
+              </ul>
+            </aside>
+          </div>
+        </article>
+
+        <article class="project">
+          <header class="project-head">
+            <p class="project-meta">Group project, 2025</p>
+            <h3>Picture Puzzle</h3>
+          </header>
+          <div class="project-body">
+            <div>
+              <p>
+                A sliding picture puzzle for Windows. The game cuts an image into tiles,
+                shuffles them, and times how long the player takes to put the picture
+                back together.
+              </p>
+              <h4>What it does</h4>
+              <ul class="check-list">
+                <li>Splits an image into tiles and shuffles them on a 3 by 3 board</li>
+                <li>Two levels, each with its own picture</li>
+                <li>Players can drag in their own image to use as the puzzle</li>
+                <li>Timer, restart button and a leaderboard sorted by fastest time</li>
+              </ul>
+              <p class="project-links">
+                <a href="https://github.com/KwamsC-web/Picture-puzzle" target="_blank" rel="noopener">View source code on GitHub</a>
+              </p>
+            </div>
+            <aside class="project-side">
+              <h4>My role</h4>
+              <p>
+                Two-person group project. I was the coder: I wrote the game logic,
+                including the image cropping, tile shuffling and win check. My
+                teammate designed the interface.
+              </p>
+              <h4>Built with</h4>
+              <ul class="tag-list">
+                <li>C#</li><li>Windows Forms</li><li>.NET Framework</li>
+              </ul>
+            </aside>
+          </div>
+        </article>
+
+        <article class="project">
+          <header class="project-head">
+            <p class="project-meta">Group project, 2025</p>
+            <h3>Turn-Based Battle Game</h3>
+          </header>
+          <div class="project-body">
+            <div>
+              <p>
+                A two-fighter battle game for Windows. The player and a computer
+                opponent take turns attacking until one fighter's health reaches zero.
+              </p>
+              <h4>What it does</h4>
+              <ul class="check-list">
+                <li>Fighters have health, attack, defense and mana, shown as live bars</li>
+                <li>Two moves: a normal attack, and a skill that costs mana and deals double damage</li>
+                <li>Attacks can miss, so each turn has some risk</li>
+                <li>A computer opponent that chooses between attacking and using a skill</li>
+                <li>Two maps, each with its own pair of fighters</li>
+              </ul>
+              <p class="project-links">
+                <a href="https://github.com/KwamsC-web/TurnBaseGameN" target="_blank" rel="noopener">View source code on GitHub</a>
+              </p>
+            </div>
+            <aside class="project-side">
+              <h4>My role</h4>
+              <p>
+                Two-person group project. I was the coder: I wrote the Player class,
+                an EnemyPlayer class that inherits from it, and the turn logic. My
+                teammate designed the interface.
+              </p>
+              <h4>Built with</h4>
+              <ul class="tag-list">
+                <li>C#</li><li>Windows Forms</li><li>.NET Framework</li>
+              </ul>
+            </aside>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-tint" id="education" aria-labelledby="education-title">
+      <div class="container two-col">
+        <h2 id="education-title">Education and certifications</h2>
+        <div>
+          <ol class="timeline">
+            <li>
+              <p class="timeline-date">2023 to present</p>
+              <h3>Bachelor of Science in Information Technology</h3>
+              <p>College of Our Lady of Mercy of Pulilan Foundation, Inc., Pulilan, Bulacan</p>
+            </li>
+            <li>
+              <p class="timeline-date">2021 to 2023</p>
+              <h3>Information and Communications Technology (ICT) Strand</h3>
+              <p>Richwell Colleges, Incorporated, Plaridel, Bulacan</p>
+            </li>
+          </ol>
+
+          <h3 class="sub-heading">Certifications</h3>
+          <ul class="cert-list">
+            <li>
+              <strong>Responsive Web Design Certification</strong>
+              <span>freeCodeCamp, 2025</span>
+            </li>
+            <li>
+              <strong>JavaScript Certification</strong>
+              <span>freeCodeCamp, in progress (2026)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title">Get in touch</h2>
+        <p class="contact-lead">
+          I'm open to entry-level web development roles. Email is the fastest way to reach me.
+        </p>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-label">Email</span>
+            <a href="mailto:Legaspineo09@gmail.com">Legaspineo09@gmail.com</a>
+          </li>
+          <li>
+            <span class="contact-label">Phone</span>
+            <a href="tel:+639765152371">+63 976-515-2371</a>
+          </li>
+          <li>
+            <span class="contact-label">LinkedIn</span>
+            <a href="https://www.linkedin.com/in/neo-legaspi" target="_blank" rel="noopener">linkedin.com/in/neo-legaspi</a>
+          </li>
+          <li>
+            <span class="contact-label">GitHub</span>
+            <a href="https://github.com/KwamsC-web" target="_blank" rel="noopener">github.com/KwamsC-web</a>
+          </li>
+          <li>
+            <span class="contact-label">Location</span>
+            <span>Bagong Silang, Bulacan, Philippines</span>
+          </li>
+        </ul>
+        <a class="btn btn-primary" href="assets/Neo_Legaspi_Resume.pdf" download>Download resume (PDF)</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year">2026</span> Neo Nestric Kram B. Legaspi</p>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
