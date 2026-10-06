@@ -1,5 +1,7 @@
 # Neo Legaspi - Portfolio Website
 
+Live site: https://kwamsc-web.vercel.app
+
 Personal resume and portfolio website. A single-page static site built with HTML, CSS and JavaScript (no framework, no build step).
 
 ## Files
