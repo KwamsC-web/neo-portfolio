@@ -13,7 +13,7 @@
   --font-display: "Bricolage Grotesque", "Segoe UI", sans-serif;
   --font-body: "Public Sans", "Segoe UI", Arial, sans-serif;
   --container: 1120px;
-  --radius: 10px;
+  --radius: 4px;
 }
 
 :root[data-theme="dark"] {
@@ -111,7 +111,7 @@ ul, ol {
 .btn {
   display: inline-block;
   padding: 12px 22px;
-  border-radius: 8px;
+  border-radius: 4px;
   border: 2px solid transparent;
   font-weight: 600;
   text-decoration: none;
@@ -168,7 +168,7 @@ ul, ol {
   place-items: center;
   width: 36px;
   height: 36px;
-  border-radius: 8px;
+  border-radius: 4px;
   background: var(--navy);
   color: var(--sun);
   font-size: 0.95rem;
@@ -188,18 +188,14 @@ ul, ol {
 .site-nav a {
   display: block;
   padding: 8px 12px;
-  border-radius: 6px;
-  color: var(--text);
+  color: var(--muted);
   text-decoration: none;
   font-weight: 500;
 }
 
-.site-nav a:hover {
-  background: var(--tint);
-}
-
+.site-nav a:hover,
 .site-nav a.is-active {
-  box-shadow: inset 0 -3px 0 var(--sun);
+  color: var(--text);
 }
 
 .theme-toggle {
@@ -207,7 +203,7 @@ ul, ol {
   font-size: 0.95rem;
   font-weight: 500;
   padding: 7px 12px;
-  border-radius: 6px;
+  border-radius: 4px;
   border: 1px solid var(--line);
   background: transparent;
   color: var(--text);
@@ -445,18 +441,15 @@ ul, ol {
 
 .check-list li {
   position: relative;
-  padding: 5px 0 5px 22px;
+  padding: 5px 0 5px 20px;
 }
 
 .check-list li::before {
-  content: "";
+  content: "\2013";
   position: absolute;
   left: 0;
-  top: 0.85em;
-  width: 9px;
-  height: 9px;
-  background: var(--sun);
-  border-radius: 2px;
+  top: 5px;
+  color: var(--muted);
 }
 
 .project-links {
@@ -510,9 +503,8 @@ ul, ol {
 }
 
 .tag-list li {
-  padding: 3px 10px;
-  border-radius: 999px;
-  background: var(--tint);
+  padding: 2px 8px;
+  border-radius: 3px;
   border: 1px solid var(--line);
   font-size: 0.9rem;
   font-weight: 500;
