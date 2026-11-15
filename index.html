@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Neo Legaspi | BS Information Technology Student &amp; Aspiring IT Professional</title>
   <meta name="description" content="Portfolio of Neo Nestric Kram B. Legaspi, a BS Information Technology student who builds web systems and mobile apps with PHP, MySQL, JavaScript and TypeScript, and enjoys IT support and troubleshooting.">
   <meta name="theme-color" content="#090b0e">
@@ -26,7 +26,13 @@
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
-  <script>document.documentElement.classList.add("js");</script>
+  <!-- Enables the animation layer. If the script fails or is slow to load, the class is removed so nothing stays hidden. -->
+  <script>
+    document.documentElement.classList.add("js");
+    window.setTimeout(function () {
+      if (!window.__motionReady) document.documentElement.classList.remove("js");
+    }, 3500);
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,9 +64,17 @@
     <symbol id="i-copy" viewBox="0 0 24 24"><path d="M9 9h11v11H9zM5 15V4h11"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
     <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 6h18v12H3zM3.5 7l8.5 6.5L20.5 7"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><path d="M4 5h16v6H4zM4 13h16v6H4zM8 8h.01M8 16h.01"/></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><path d="M4 6c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3zM4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
+    <symbol id="i-device" viewBox="0 0 24 24"><path d="M3 5h13v9H3zM7 18h5M9.5 14v4M19 8h-1.5v11H19a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1z"/></symbol>
+    <symbol id="i-branch" viewBox="0 0 24 24"><path d="M6 3v12M18 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM18 9c0 6-12 3-12 6"/></symbol>
+    <symbol id="i-support" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2M4 14h3v5H4zM17 14h3v5h-3zM20 19c0 1.5-2 2-5 2"/></symbol>
     <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.4-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></symbol>
     <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></symbol>
   </svg>
+
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
 
   <a class="skip-link" href="#main">Skip to main content</a>
 
@@ -84,6 +98,7 @@
           <li><a href="#education">Education</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+        <span class="nav-ind" id="navInd" aria-hidden="true"></span>
         <a class="nav-resume" href="assets/Neo_Legaspi_Resume.pdf" download>
           Resume <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg>
         </a>
@@ -95,31 +110,32 @@
 
     <!-- HERO -->
     <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true" data-hero-bg></div>
       <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="status" data-load style="--d:0ms">
+        <div class="hero-copy" data-hero-copy>
+          <p class="status" data-load style="--d:300ms">
             <span class="status-dot" aria-hidden="true"></span>
             Open to entry-level roles and internships
           </p>
-          <h1 id="hero-title" data-load style="--d:80ms">Neo<br>Legaspi</h1>
-          <p class="hero-role" data-load style="--d:160ms"><span class="nw">BS Information Technology Student</span> <span class="sep" aria-hidden="true">|</span> <span class="nw">Aspiring IT Professional</span></p>
-          <p class="hero-lead" data-load style="--d:240ms">
+          <h1 id="hero-title" class="split hero-split">Neo<br>Legaspi</h1>
+          <p class="hero-role" data-load style="--d:620ms"><span class="nw">BS Information Technology Student</span> <span class="sep" aria-hidden="true">|</span> <span class="nw">Aspiring IT Professional</span></p>
+          <p class="hero-lead" data-load style="--d:720ms">
             I build web systems and keep learning by finishing real projects. I led and developed
             my team's capstone, a records profiling system for Barangay Dampol 2nd-A, and I'm
             looking to grow in web development, IT support and QA testing.
           </p>
-          <div class="hero-actions" data-load style="--d:320ms">
+          <div class="hero-actions" data-load style="--d:820ms">
             <a class="btn btn-primary" href="#projects">View My Projects <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
             <a class="btn btn-ghost" href="assets/Neo_Legaspi_Resume.pdf" download>Download Resume <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
           </div>
-          <ul class="social-row" data-load style="--d:400ms" aria-label="Profiles">
+          <ul class="social-row" data-load style="--d:920ms" aria-label="Profiles">
             <li><a href="https://github.com/KwamsC-web" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a></li>
             <li><a href="https://www.linkedin.com/in/neo-legaspi" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a></li>
             <li><a href="mailto:Legaspineo09@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>Email</a></li>
           </ul>
         </div>
 
-        <div class="hero-visual" data-load style="--d:260ms">
+        <div class="hero-visual" data-load style="--d:500ms" data-hero-visual>
           <figure class="map-card">
             <svg viewBox="0 0 420 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Line illustration of a neighborhood map with household markers">
               <g class="map-lots">
@@ -164,6 +180,13 @@
           </div>
         </div>
       </div>
+
+      <div class="container cue-wrap">
+        <a class="scroll-cue" href="#about" data-cue aria-label="Scroll to the About section">
+          <span class="mono">Scroll</span>
+          <span class="cue-line" aria-hidden="true"></span>
+        </a>
+      </div>
     </section>
 
     <!-- ABOUT -->
@@ -171,20 +194,20 @@
       <div class="container">
         <p class="eyebrow reveal"><span>01</span> About</p>
         <div class="about-grid">
-          <h2 id="about-title" class="section-title reveal">A student who likes building things, and fixing them when they break.</h2>
-          <div class="prose reveal" style="--d:80ms">
-            <p>
+          <h2 id="about-title" class="section-title split">A student who likes building things, and fixing them when they break.</h2>
+          <div class="prose">
+            <p class="reveal">
               I'm a BS Information Technology student at the College of Our Lady of Mercy of
               Pulilan. Most of my work so far is web development: HTML, CSS and JavaScript on
               the front end, with PHP and MySQL behind them. I've also built a mobile app with
               React Native and a few desktop apps in C#.
             </p>
-            <p>
+            <p class="reveal" style="--d:90ms">
               My biggest project is our capstone, where I was group leader and developer for a
               six-member team. It taught me how to plan a database, protect accounts and records,
               and keep a growing codebase organized.
             </p>
-            <p>
+            <p class="reveal" style="--d:180ms">
               I also enjoy the troubleshooting side of IT: setting up workstations, installing
               operating systems and configuring small local networks. I keep learning through
               freeCodeCamp and short trainings, and I'm looking for an entry-level role where I
@@ -194,17 +217,17 @@
         </div>
 
         <ul class="bento about-bento">
-          <li class="tile reveal">
+          <li class="tile reveal" data-reveal="left" data-parallax="0.02">
             <span class="mono">Education</span>
             <strong>BS Information Technology</strong>
             <p>College of Our Lady of Mercy of Pulilan Foundation, Inc.</p>
           </li>
-          <li class="tile reveal" style="--d:80ms">
+          <li class="tile reveal" style="--d:80ms" data-parallax="0.045">
             <span class="mono">Leadership</span>
             <strong>Capstone group leader</strong>
             <p>Led a six-member team and developed the system itself.</p>
           </li>
-          <li class="tile reveal" style="--d:160ms">
+          <li class="tile reveal" data-reveal="right" style="--d:160ms" data-parallax="0.07">
             <span class="mono">Self-study</span>
             <strong>Always learning</strong>
             <p>freeCodeCamp Responsive Web Design (2025), JavaScript in progress, plus cybersecurity trainings.</p>
@@ -217,57 +240,74 @@
     <section class="section" id="projects" aria-labelledby="projects-title">
       <div class="container">
         <p class="eyebrow reveal"><span>02</span> Projects</p>
-        <h2 id="projects-title" class="section-title reveal">Selected work</h2>
-        <p class="section-lead reveal">Two projects I'm proudest of, followed by smaller academic projects. Each one has a case study with my role, the tools I used and a demo video.</p>
+        <h2 id="projects-title" class="section-title split">Selected work</h2>
+        <p class="section-lead reveal">Two projects I'm proudest of, followed by smaller academic projects. Each one has a case study with my role and the tools I used.</p>
 
-        <article class="feature reveal">
-          <div class="media feature-media" data-label="Barangay profiling system" data-open-case="capstone">
-            <img src="assets/img/capstone.webp" width="1280" height="720" loading="lazy" decoding="async"
-                 alt="Analytics dashboard of the barangay profiling system showing resident counts, sector distribution and a household map"
-                 onerror="this.remove()">
-          </div>
-          <div class="feature-body">
-            <p class="meta mono">Capstone project <span aria-hidden="true">/</span> 2026</p>
-            <h3>Web-Based Barangay Information and Socio-Economic Profiling System</h3>
-            <p class="client">Built for the Office of Barangay Dampol 2nd-A, Pulilan, Bulacan</p>
-            <p>A full-stack web application that replaces paper and spreadsheet records in a barangay office. Staff can register residents and households, record socio-economic data, see households on a map and produce reports.</p>
-            <p class="role"><strong>My role:</strong> Group leader and developer</p>
-            <ul class="chips" aria-label="Technologies">
-              <li>PHP</li><li>MySQL</li><li>JavaScript</li><li>Bootstrap</li><li>Leaflet</li><li>PHPMailer</li>
-            </ul>
-            <div class="feature-actions">
-              <button class="btn btn-primary" type="button" data-open-case="capstone">Read case study <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        <!-- On large screens this becomes a pinned, scroll-driven sequence. Everywhere else it is a normal vertical list. -->
+        <div class="showcase" data-showcase style="--n:2">
+          <div class="showcase-track" data-sc-track>
+            <div class="showcase-stage">
+
+              <article class="feature slide reveal" data-slide>
+                <div class="media feature-media" data-clip data-label="Barangay profiling system" data-open-case="capstone">
+                  <img src="assets/img/capstone.webp" width="1280" height="720" loading="lazy" decoding="async" data-parallax="0.07"
+                       alt="Analytics dashboard of the barangay profiling system showing resident counts, sector distribution and a household map"
+                       onerror="this.remove()">
+                </div>
+                <div class="feature-body">
+                  <p class="meta mono"><span class="num">01</span> <span aria-hidden="true">/</span> Capstone project <span aria-hidden="true">/</span> 2026</p>
+                  <h3 class="split">Web-Based Barangay Information and Socio-Economic Profiling System</h3>
+                  <p class="client">Built for the Office of Barangay Dampol 2nd-A, Pulilan, Bulacan</p>
+                  <p>A full-stack web application that replaces paper and spreadsheet records in a barangay office. Staff can register residents and households, record socio-economic data, see households on a map and produce reports.</p>
+                  <p class="role"><strong>My role:</strong> Group leader and developer</p>
+                  <ul class="chips" aria-label="Technologies">
+                    <li>PHP</li><li>MySQL</li><li>JavaScript</li><li>Bootstrap</li><li>Leaflet</li><li>PHPMailer</li>
+                  </ul>
+                  <div class="feature-actions">
+                    <button class="btn btn-primary" type="button" data-open-case="capstone">Read case study <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="feature feature-alt slide reveal" data-slide>
+                <div class="media feature-media media-tall" data-clip data-label="Thesara" data-open-case="thesara">
+                  <img src="assets/img/thesara.webp" width="1000" height="837" loading="lazy" decoding="async" data-parallax="0.07"
+                       alt="Thesara app menu listing thesis tools such as group members, research, meetings and defense preparation"
+                       onerror="this.remove()">
+                </div>
+                <div class="feature-body">
+                  <p class="meta mono"><span class="num">02</span> <span aria-hidden="true">/</span> Solo project <span aria-hidden="true">/</span> 2026</p>
+                  <h3 class="split">Thesara: Thesis Planning App for Student Groups</h3>
+                  <p class="client">Built for college students and research groups in the Philippines</p>
+                  <p>An Android app and website that help a student group plan and track a thesis from proposal to defense. It is free to use, with an optional Premium plan.</p>
+                  <p class="role"><strong>My role:</strong> Solo developer</p>
+                  <ul class="chips" aria-label="Technologies">
+                    <li>TypeScript</li><li>React Native</li><li>Expo</li><li>Supabase</li><li>PostgreSQL</li><li>Cloudflare Pages</li>
+                  </ul>
+                  <div class="feature-actions">
+                    <button class="btn btn-primary" type="button" data-open-case="thesara">Read case study <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+                    <a class="btn btn-ghost" href="https://thesara.pages.dev" target="_blank" rel="noopener">Visit live site <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
+                  </div>
+                </div>
+              </article>
+
+              <div class="sc-hud">
+                <p class="mono sc-count" aria-hidden="true"><b data-sc-cur>01</b> / 02</p>
+                <div class="sc-dots" role="group" aria-label="Featured projects">
+                  <button type="button" data-sc-go="0" aria-label="Show project 1: Barangay profiling system" aria-current="true"></button>
+                  <button type="button" data-sc-go="1" aria-label="Show project 2: Thesara"></button>
+                </div>
+              </div>
+
             </div>
           </div>
-        </article>
-
-        <article class="feature feature-alt reveal">
-          <div class="media feature-media media-tall" data-label="Thesara" data-open-case="thesara">
-            <img src="assets/img/thesara.webp" width="1000" height="837" loading="lazy" decoding="async"
-                 alt="Thesara app menu listing thesis tools such as group members, research, meetings and defense preparation"
-                 onerror="this.remove()">
-          </div>
-          <div class="feature-body">
-            <p class="meta mono">Solo project <span aria-hidden="true">/</span> 2026</p>
-            <h3>Thesara: Thesis Planning App for Student Groups</h3>
-            <p class="client">Built for college students and research groups in the Philippines</p>
-            <p>An Android app and website that help a student group plan and track a thesis from proposal to defense. It is free to use, with an optional Premium plan.</p>
-            <p class="role"><strong>My role:</strong> Solo developer</p>
-            <ul class="chips" aria-label="Technologies">
-              <li>TypeScript</li><li>React Native</li><li>Expo</li><li>Supabase</li><li>PostgreSQL</li><li>Cloudflare Pages</li>
-            </ul>
-            <div class="feature-actions">
-              <button class="btn btn-primary" type="button" data-open-case="thesara">Read case study <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
-              <a class="btn btn-ghost" href="https://thesara.pages.dev" target="_blank" rel="noopener">Visit live site <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
-            </div>
-          </div>
-        </article>
+        </div>
 
         <h3 class="subhead reveal">More projects</h3>
         <ul class="mini-projects">
           <li class="reveal">
             <article class="mini-card">
-              <p class="meta mono">Academic group project <span aria-hidden="true">/</span> 2025</p>
+              <p class="meta mono"><span class="num">03</span> <span aria-hidden="true">/</span> Academic group project <span aria-hidden="true">/</span> 2025</p>
               <h4>PetClinic Appointment Windows Form Application</h4>
               <p>A desktop application for managing pet clinic appointments, with client, pet and appointment records.</p>
               <ul class="chips" aria-label="Technologies"><li>C#</li><li>Windows Forms</li><li>SQL Server</li></ul>
@@ -276,7 +316,7 @@
           </li>
           <li class="reveal" style="--d:80ms">
             <article class="mini-card">
-              <p class="meta mono">Group project <span aria-hidden="true">/</span> 2025</p>
+              <p class="meta mono"><span class="num">04</span> <span aria-hidden="true">/</span> Group project <span aria-hidden="true">/</span> 2025</p>
               <h4>Picture Puzzle</h4>
               <p>A sliding picture puzzle for Windows with a timer and a leaderboard sorted by fastest time.</p>
               <ul class="chips" aria-label="Technologies"><li>C#</li><li>Windows Forms</li><li>.NET Framework</li></ul>
@@ -285,7 +325,7 @@
           </li>
           <li class="reveal" style="--d:160ms">
             <article class="mini-card">
-              <p class="meta mono">Group project <span aria-hidden="true">/</span> 2025</p>
+              <p class="meta mono"><span class="num">05</span> <span aria-hidden="true">/</span> Group project <span aria-hidden="true">/</span> 2025</p>
               <h4>Turn-Based Battle Game</h4>
               <p>A two-fighter battle game for Windows where the player faces a computer opponent turn by turn.</p>
               <ul class="chips" aria-label="Technologies"><li>C#</li><li>Windows Forms</li><li>.NET Framework</li></ul>
@@ -300,32 +340,32 @@
     <section class="section" id="skills" aria-labelledby="skills-title">
       <div class="container">
         <p class="eyebrow reveal"><span>03</span> Skills</p>
-        <h2 id="skills-title" class="section-title reveal">Tools I've used on real projects</h2>
+        <h2 id="skills-title" class="section-title split">Tools I've used on real projects</h2>
         <p class="section-lead reveal">Everything listed here appears in my projects or coursework. I've left out anything I haven't actually used.</p>
 
         <ul class="bento skills-bento">
           <li class="tile skill reveal">
-            <h3>Frontend</h3>
+            <div class="skill-head"><span class="skill-ico" aria-hidden="true"><svg class="icon"><use href="#i-code"/></svg></span><h3>Frontend</h3></div>
             <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>TypeScript</li><li>Bootstrap</li><li>Leaflet</li><li>Responsive web design</li></ul>
           </li>
-          <li class="tile skill reveal" style="--d:60ms">
-            <h3>Backend</h3>
+          <li class="tile skill reveal" style="--d:70ms">
+            <div class="skill-head"><span class="skill-ico" aria-hidden="true"><svg class="icon"><use href="#i-server"/></svg></span><h3>Backend</h3></div>
             <ul class="chips"><li>PHP (basic)</li><li>PHPMailer</li><li>Supabase</li><li>Server functions</li><li>Role-based access</li></ul>
           </li>
-          <li class="tile skill reveal" style="--d:120ms">
-            <h3>Database</h3>
+          <li class="tile skill reveal" style="--d:140ms">
+            <div class="skill-head"><span class="skill-ico" aria-hidden="true"><svg class="icon"><use href="#i-db"/></svg></span><h3>Database</h3></div>
             <ul class="chips"><li>MySQL</li><li>PostgreSQL</li><li>Microsoft SQL Server</li><li>HeidiSQL</li><li>phpMyAdmin</li><li>Database design</li><li>CRUD operations</li></ul>
           </li>
           <li class="tile skill reveal">
-            <h3>Mobile and desktop apps</h3>
+            <div class="skill-head"><span class="skill-ico" aria-hidden="true"><svg class="icon"><use href="#i-device"/></svg></span><h3>Mobile and desktop apps</h3></div>
             <ul class="chips"><li>React Native</li><li>Expo</li><li>C#</li><li>Windows Forms</li><li>.NET Framework</li></ul>
           </li>
-          <li class="tile skill reveal" style="--d:60ms">
-            <h3>Tools and environment</h3>
+          <li class="tile skill reveal" style="--d:70ms">
+            <div class="skill-head"><span class="skill-ico" aria-hidden="true"><svg class="icon"><use href="#i-branch"/></svg></span><h3>Tools and environment</h3></div>
             <ul class="chips"><li>VS Code</li><li>Git</li><li>GitHub</li><li>XAMPP</li><li>Laragon</li><li>Cloudflare Pages</li><li>Vercel</li></ul>
           </li>
-          <li class="tile skill reveal" style="--d:120ms">
-            <h3>IT support and troubleshooting</h3>
+          <li class="tile skill reveal" style="--d:140ms">
+            <div class="skill-head"><span class="skill-ico" aria-hidden="true"><svg class="icon"><use href="#i-support"/></svg></span><h3>IT support and troubleshooting</h3></div>
             <ul class="chips"><li>Computer troubleshooting</li><li>OS installation</li><li>Software and OS configuration</li><li>Workstation setup</li><li>IP configuration</li><li>Ethernet cabling</li><li>Network setup</li></ul>
           </li>
         </ul>
@@ -336,16 +376,16 @@
     <section class="section" id="education" aria-labelledby="education-title">
       <div class="container">
         <p class="eyebrow reveal"><span>04</span> Education</p>
-        <h2 id="education-title" class="section-title reveal">Education and certifications</h2>
+        <h2 id="education-title" class="section-title split">Education and certifications</h2>
 
         <div class="edu-grid">
-          <ol class="timeline reveal">
-            <li>
+          <ol class="timeline" data-timeline>
+            <li data-in>
               <p class="mono">2023 to present</p>
               <h3>Bachelor of Science in Information Technology</h3>
               <p>College of Our Lady of Mercy of Pulilan Foundation, Inc., Pulilan, Bulacan</p>
             </li>
-            <li>
+            <li data-in style="--d:160ms">
               <p class="mono">2021 to 2023</p>
               <h3>Information and Communications Technology (ICT) Strand</h3>
               <p>Richwell Colleges, Incorporated, Plaridel, Bulacan</p>
@@ -382,10 +422,11 @@
     </section>
 
     <!-- CONTACT -->
-    <section class="section section-contact" id="contact" aria-labelledby="contact-title">
+    <section class="section section-contact" id="contact" aria-labelledby="contact-title" data-contact>
+      <div class="contact-orb" aria-hidden="true" data-orb></div>
       <div class="container">
         <p class="eyebrow reveal"><span>05</span> Contact</p>
-        <h2 id="contact-title" class="contact-title reveal">Have an opportunity or project in mind? <span>Let's connect.</span></h2>
+        <h2 id="contact-title" class="contact-title split">Have an opportunity or project in mind? <span>Let's connect.</span></h2>
 
         <div class="contact-main reveal">
           <a class="contact-email" href="mailto:Legaspineo09@gmail.com">Legaspineo09@gmail.com</a>
@@ -397,20 +438,20 @@
           <span class="visually-hidden" id="copyStatus" role="status" aria-live="polite"></span>
         </div>
 
-        <ul class="contact-grid reveal">
+        <ul class="contact-grid reveal" style="--d:80ms">
           <li><span class="mono">Phone</span><a href="tel:+639765152371">+63 976-515-2371</a></li>
           <li><span class="mono">LinkedIn</span><a href="https://www.linkedin.com/in/neo-legaspi" target="_blank" rel="noopener">linkedin.com/in/neo-legaspi</a></li>
           <li><span class="mono">GitHub</span><a href="https://github.com/KwamsC-web" target="_blank" rel="noopener">github.com/KwamsC-web</a></li>
           <li><span class="mono">Location</span><span>Bagong Silang, Bulacan, Philippines</span></li>
         </ul>
 
-        <a class="btn btn-primary reveal" href="assets/Neo_Legaspi_Resume.pdf" download>Download Resume (PDF) <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
+        <a class="btn btn-primary reveal" style="--d:160ms" href="assets/Neo_Legaspi_Resume.pdf" download>Download Resume (PDF) <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
+    <div class="container footer-inner reveal">
       <p>&copy; <span id="year">2026</span> Neo Nestric Kram B. Legaspi</p>
       <a href="#top">Back to top</a>
     </div>
@@ -447,19 +488,12 @@
         </div>
         <aside class="case-side">
           <h4>Status</h4>
-          <p>2026 capstone project. A demo video is below; no live demo or public repository is linked yet.</p>
+          <p>2026 capstone project. No live demo or public repository is linked yet.</p>
           <h4>Built with</h4>
           <ul class="chips"><li>PHP</li><li>MySQL</li><li>JavaScript</li><li>HTML</li><li>CSS</li><li>Bootstrap</li><li>Leaflet</li><li>PHPMailer</li><li>Git</li></ul>
           <h4>Team</h4>
           <p>Six members, BS Information Technology</p>
         </aside>
-      </div>
-      <h4 class="video-title">Demo video</h4>
-      <div class="video-frame">
-        <video controls preload="none" playsinline poster="assets/img/capstone.webp" aria-label="Demo of the barangay profiling system">
-          <source src="assets/video/capstone.mp4" type="video/mp4">
-          Your browser does not support video.
-        </video>
       </div>
     </div>
   </dialog>
@@ -500,13 +534,6 @@
           <p><a class="text-link" href="https://thesara.pages.dev" target="_blank" rel="noopener">thesara.pages.dev <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></p>
         </aside>
       </div>
-      <h4 class="video-title">Demo video</h4>
-      <div class="video-frame">
-        <video controls preload="none" playsinline poster="assets/img/thesara.webp" aria-label="Demo of the Thesara app">
-          <source src="assets/video/thesara.mp4" type="video/mp4">
-          Your browser does not support video.
-        </video>
-      </div>
     </div>
   </dialog>
 
@@ -528,13 +555,6 @@
           <h4>Built with</h4>
           <ul class="chips"><li>C#</li><li>Windows Forms</li><li>Microsoft SQL Server</li></ul>
         </aside>
-      </div>
-      <h4 class="video-title">Demo video</h4>
-      <div class="video-frame">
-        <video controls preload="none" playsinline aria-label="Demo of the PetClinic appointment application">
-          <source src="assets/video/petclinic.mp4" type="video/mp4">
-          Your browser does not support video.
-        </video>
       </div>
     </div>
   </dialog>
@@ -565,13 +585,6 @@
           <ul class="chips"><li>C#</li><li>Windows Forms</li><li>.NET Framework</li></ul>
         </aside>
       </div>
-      <h4 class="video-title">Demo video</h4>
-      <div class="video-frame">
-        <video controls preload="none" playsinline aria-label="Demo of the Picture Puzzle game">
-          <source src="assets/video/picture-puzzle.mp4" type="video/mp4">
-          Your browser does not support video.
-        </video>
-      </div>
     </div>
   </dialog>
 
@@ -601,13 +614,6 @@
           <h4>Built with</h4>
           <ul class="chips"><li>C#</li><li>Windows Forms</li><li>.NET Framework</li></ul>
         </aside>
-      </div>
-      <h4 class="video-title">Demo video</h4>
-      <div class="video-frame">
-        <video controls preload="none" playsinline aria-label="Demo of the turn-based battle game">
-          <source src="assets/video/turn-based-battle.mp4" type="video/mp4">
-          Your browser does not support video.
-        </video>
       </div>
     </div>
   </dialog>
